@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Petru Miron" />
+    <meta name="author" content="Κομνάς Καφάσης" />
+    <meta name="description" content="Online Clothes Shop" />
+    <meta
+      name="keywords"
+      content="pants,jeans,clothes,shirts,trousers,men's clothes,accessories,shoes"
+    />
+    <title>K&L</title>
+    <link rel="icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!--* start of header -->
+    <header class="index--header">
+      <div class="index--header--top">
+        <img src="./images/logo.png" alt="website logo" class="header--logo" />
+        <h2 class="index--header--text">Men's Clothes</h2>
+      </div>
+      <i class="fas fa-bars" id="bars"></i>
+      <nav class="index--nav">
+        <ul class="index--nav--ul">
+          <li class="index--nav--logo">
+            <a href="./index.html">K<span>&</span>L</a>
+          </li>
+          <li class="index--nav--ul--li"><a href="./index.html">Home</a></li>
+          <li class="index--nav--ul--li index--categories">
+            <a href="./product-categories.html">Categories</a>
+            <div class="categories--dropdown">
+              <ul>
+                <li>
+                  <a
+                    href="./product-categories.html#category--jackets--and--coats"
+                    >Jackets & Coats</a
+                  >
+                </li>
+                <li><a href="./product-categories.html#trousers">Pants</a></li>
+                <li><a href="./product-categories.html#shirts">Shirts</a></li>
+                <li>
+                  <a href="./product-categories.html#category--shoes">Shoes</a>
+                </li>
+                <li>
+                  <a href="./product-categories.html#accessories"
+                    >Accessories</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="index--nav--ul--li">
+            <a href="./about-us.html">About Us</a>
+          </li>
+          <li class="index--nav--ul--li">
+            <a href="./contact.html">Contact</a>
+          </li>
+          <li class="index--nav--ul--li">
+            <a href="./registration--form.html">Register</a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fas fa-shopping-cart" id="shopping-cart"
+                ><span>0</span></i
+              ></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- *end of header -->
+    <main class="registration--main">
+      <h2>Register</h2>
+      <form action="#" id="registration--form">
+        <div class="register--container">
+          <h2>Personal Details</h2>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            pattern=".{3,}"
+            title="Three or more characters."
+            autocomplete="family-name"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
+            title="Must contain at least one number, one uppercase and lowercase letter, and at least 5 or more characters."
+          />
+          <label for="repeat--password">Repeat Password</label>
+          <input
+            type="password"
+            id="repeat--password"
+            name="repeat--password"
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
+            title="Must contain at least one number, one uppercase and lowercase letter, and at least 5 or more characters."
+          />
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="ex. John"
+            title="First name has to start with a letter."
+            autocomplete="given-name"
+            required
+          /><br />
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="ex. Doe"
+            title="Last name has to start with a letter."
+            autocomplete="family-name"
+            required
+          /><br />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ex. johndoe@gmail.com"
+            required
+          /><br />
+          <label for="email">Address</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="ex. Sesame Street 1,12354,Athens,Greece"
+            required
+          /><br />
+          <label for="email">Date of Birth</label>
+          <input
+            type="date"
+            id="date--of--birth"
+            name="date--of--birth"
+            required
+          />
+          <br />
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="ex. 6901234567"
+            pattern="^[0-9].*\d{4,}"
+            title="Phone number should only contain numbers."
+            required
+            autocomplete="mobile"
+          /><br />
+          <label for="phone">Phone Number #2</label>
+          <input
+            type="tel"
+            id="second--phone"
+            name="phone"
+            placeholder="ex. 6901234567"
+            pattern="^[0-9].*\d{4,}"
+            title="Phone number should only contain numbers."
+            autocomplete="mobile"
+          />
+        </div>
+
+        <div class="order--info--container">
+          <h2>Payment Methods</h2>
+          <fieldset id="payment--method">
+            <legend>Select Payment Method</legend>
+            <label for="card">
+              <i class="fas fa-credit-card"></i>
+              Debit/Credit Card
+              <input type="radio" value="card" name="payment--option" id="card"
+            /></label>
+            <label for="paypal"
+              ><i class="fab fa-cc-paypal"></i> Paypal
+              <input
+                type="radio"
+                value="paypal"
+                name="payment--option"
+                id="paypal"
+            /></label>
+            <label for="apple--pay">
+              <i class="fab fa-cc-apple-pay"></i> Apple Pay
+              <input
+                type="radio"
+                value="apple--pay"
+                name="payment--option"
+                id="apple--pay"
+            /></label>
+          </fieldset>
+          <h2 class="shipping--details--h2">Shipping Details</h2>
+          <label for="shipping--address">Shipping Address</label>
+          <input
+            type="text"
+            id="shipping--address"
+            name="shipping--address"
+            placeholder="ex. Sesame Street 1,12354,Athens,Greece"
+            required
+          />
+          <div class="user--notification--container">
+            <h2>How would you like to be notified?</h2>
+            <div>
+              <div>
+                <label for="sms--notification">SMS</label>
+                <input type="checkbox" id="sms--notification" name="sms" />
+              </div>
+              <div>
+                <label for="email--notification">Email</label>
+                <input type="checkbox" id="email--notification" name="email" />
+              </div>
+              <div>
+                <label for="viber--notification">Viber</label>
+                <input type="checkbox" id="viber--notification" name="viber" />
+              </div>
+              <div>
+                <label for="whatsapp--notification">WhatsApp</label>
+                <input
+                  type="checkbox"
+                  id="whatsapp--notification"
+                  name="whatsapp"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="questionnaire">
+            <h2>Questionnaire</h2>
+            <label for="frequency--question--input"
+              >How often do you shop online?<br />
+            </label>
+            <input list="frequency--question" id="frequency--question--input" />
+            <datalist id="frequency--question">
+              <option value="Less than once a month"></option>
+              <option value="1-2 times a month"></option>
+              <option value="3-4 times a month"></option>
+              <option value="More than 5 times a month"></option></datalist
+            ><br />
+            <label for="variety--question--input"
+              >What kind of products do you usually shop for? <br />
+            </label>
+            <input list="variety--question" id="variety--question--input" />
+            <datalist id="variety--question">
+              <option value="Technology products"></option>
+              <option value="Clothes/Fashion"></option>
+              <option value="Household items"></option>
+              <option value="Food/beverages"></option></datalist
+            ><br />
+            <label for="payment--question--input"
+              >How do you usually pay? <br />
+            </label>
+            <input list="payment--question" id="payment--question--input" />
+            <datalist id="payment--question">
+              <option value="Credit/debit card"></option>
+              <option value="Mobile payment (Apple Pay/G Pay)"></option>
+              <option value="Paypal"></option>
+              <option value="Cash on delivery"></option></datalist
+            ><br />
+            <label for="how--did--they--find--us--question--input"
+              >How did you find our website? <br />
+            </label>
+            <input
+              list="how--did--they--find--us--question"
+              id="how--did--they--find--us--question--input"
+            />
+            <datalist id="how--did--they--find--us--question">
+              <option value="Google"></option>
+              <option value="Suggested by someone"></option>
+              <option value="Saw an ad of our website"></option></datalist
+            ><br />
+            <label for="visit--question--input"
+              >How often do you visit our website? <br />
+            </label>
+            <input list="visit--question" id="visit--question--input" />
+            <datalist id="visit--question">
+              <option value="Less than once a month"></option>
+              <option value="1-2 times a month"></option>
+              <option value="3-4 times a month"></option>
+              <option value="More than 5 times a month"></option>
+            </datalist>
+          </div>
+        </div>
+      </form>
+      <input
+        type="submit"
+        form="registration--form"
+        value="Submit"
+        id="registration--submit--btn"
+      />
+    </main>
+
+    <!-- * start of footer -->
+    <footer class="index--footer">
+      <h2 class="index--ul--copyright">&#169; 2022 K&L</h2>
+
+      <!-- tropoi plirwmhs -->
+
+      <aside class="footer--info">
+        <section class="payment--methods">
+          <h2>Payment Methods</h2>
+          <i><img src="./images/icons/amex.svg" alt="amex card" /></i>
+          <i><img src="./images/icons/visa.svg" alt="visa card" /></i>
+          <i><img src="./images/icons/mastercard.svg" alt="mastercard" /></i>
+          <i><img src="./images/icons/paypal.svg" alt="paypal" /></i>
+          <i><img src="./images/icons/applepay.svg" alt="apple pay" /></i>
+        </section>
+        <ul class="index--ul">
+          <li class="index--ul--li">
+            <a href="https://www.twitter.com"
+              ><i class="fab fa-twitter-square"></i>Twitter</a
+            >
+          </li>
+          <li class="index--ul--li">
+            <a href="https://www.facebook.com"
+              ><i class="fab fa-facebook-square"></i>Facebook</a
+            >
+          </li>
+          <li class="index--ul--li">
+            <a href="https://www.instagram.com"
+              ><i class="fab fa-instagram-square"></i>Instagram</a
+            >
+          </li>
+          <li class="index--ul--li contact--us">
+            <a href="mailto:mironpeter@icloud.com"
+              ><i class="fas fa-envelope"></i>Contact Us</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </footer>
+    <!-- *end of footer -->
+    <script src="./app.js"></script>
+  </body>
+</html>

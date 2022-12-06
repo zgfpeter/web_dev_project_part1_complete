@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Petru Miron" />
+    <meta name="author" content="Κομνάς Καφάσης" />
+    <meta name="description" content="Online Clothes Shop" />
+    <meta
+      name="keywords"
+      content="pants,jeans,clothes,shirts,trousers,men's clothes,accessories,shoes"
+    />
+    <title>Contact</title>
+  </head>
+  <body>
+    <!--* start of header -->
+    <header>
+      <img src="../Exercise5/images/logo.png" alt="website logo" />
+      <h2>Men's Clothes</h2>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="./index.html">K<span>&</span>L</a>
+          </li>
+          <li><a href="./index.html">Home</a></li>
+          <li>
+            <a href="./product-categories.html">Categories</a>
+          </li>
+          <li>
+            <a href="./about-us.html">About Us</a>
+          </li>
+          <li>
+            <a href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- *end of header -->
+    <main>
+      <h2>Contact Us</h2>
+      <section>
+        <form action="#" id="contact--form">
+          <h2>Customer Info</h2>
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="ex. John"
+            required
+          />
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="ex. Doe"
+            required
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ex. johndoe@gmail.com"
+            required
+          />
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="ex. 6901234567"
+            required
+          />
+          <label for="phone">Phone Number #2</label>
+          <input
+            type="tel"
+            id="second--phone"
+            name="second--phone"
+            placeholder="ex. 6901234567"
+          />
+
+          <h2>Order Info</h2>
+          <label for="order--number">Order Number</label>
+          <input
+            type="text"
+            id="order--number"
+            name="order--number"
+            placeholder="ex. 12345"
+            required
+          />
+          <label for="order--date">Order Date</label>
+          <input type="date" id="order--date" name="order--date" required />
+          <label for="order--receipt">Order Receipt</label>
+          <input
+            type="file"
+            id="order--receipt"
+            name="order--receipt"
+            required
+          />
+          <label for="order--description">Message</label>
+          <textarea
+            name="order--description"
+            id="order--description"
+            cols="36"
+            rows="9"
+            required
+          ></textarea>
+        </form>
+        <input type="submit" form="contact--form" value="Send" id="send--btn" />
+      </section>
+    </main>
+
+    <!-- * start of footer -->
+    <footer>
+      <h2>&#169; 2022 K&L</h2>
+      <!-- tropoi plirwmhs -->
+      <aside>
+        <section>
+          <h2>Payment Methods</h2>
+          <i
+            ><img src="../Exercise5/images/icons/amex.svg" alt="amex card"
+          /></i>
+          <i
+            ><img src="../Exercise5/images/icons/visa.svg" alt="visa card"
+          /></i>
+          <i
+            ><img
+              src="../Exercise5/images/icons/mastercard.svg"
+              alt="mastercard"
+          /></i>
+          <i><img src="../Exercise5/images/icons/paypal.svg" alt="paypal" /></i>
+          <i
+            ><img src="../Exercise5/images/icons/applepay.svg" alt="apple pay"
+          /></i>
+        </section>
+      </aside>
+    </footer>
+    <!-- *end of footer -->
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Petru Miron" />
+    <meta name="author" content="Κομνάς Καφάσης" />
+    <meta name="description" content="Online Clothes Shop" />
+    <meta
+      name="keywords"
+      content="pants,jeans,clothes,shirts,trousers,men's clothes,accessories,shoes"
+    />
+    <title>K&L</title>
+    <link rel="icon" href="../images/favicon.ico" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: auto;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        overflow: auto;
+        background: linear-gradient(
+          315deg,
+          rgba(101, 0, 94, 1) 3%,
+          rgba(60, 132, 206, 1) 38%,
+          rgba(48, 238, 226, 1) 68%,
+          rgba(255, 25, 25, 1) 98%
+        );
+        animation: gradient 15s ease infinite;
+        background-size: 400% 400%;
+        background-attachment: fixed;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+
+      .wave {
+        background: rgb(255 255 255 / 25%);
+        border-radius: 1000% 1000% 0 0;
+        position: fixed;
+        width: 200%;
+        height: 12em;
+        animation: wave 10s -3s linear infinite;
+        transform: translate3d(0, 0, 0);
+        opacity: 0.8;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      .wave:nth-of-type(2) {
+        bottom: -1.25em;
+        animation: wave 18s linear reverse infinite;
+        opacity: 0.8;
+      }
+
+      .wave:nth-of-type(3) {
+        bottom: -2.5em;
+        animation: wave 20s -1s reverse infinite;
+        opacity: 0.9;
+      }
+
+      @keyframes wave {
+        2% {
+          transform: translateX(1);
+        }
+
+        25% {
+          transform: translateX(-25%);
+        }
+
+        50% {
+          transform: translateX(-50%);
+        }
+
+        75% {
+          transform: translateX(-25%);
+        }
+
+        100% {
+          transform: translateX(1);
+        }
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25em;
+        width: 40%;
+      }
+
+      main > h2 {
+        background-image: linear-gradient(to bottom, #41295a 0%, #41085e 100%);
+        color: whitesmoke;
+        width: 100%;
+        text-align: center;
+        padding: 1em 0;
+        border-radius: 5px 5px 0 0;
+      }
+
+      main > a {
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: black;
+        width: 100%;
+        text-align: center;
+        background-color: whitesmoke;
+        padding: 0.5em 0;
+      }
+
+      a:hover {
+        background-color: #237c97;
+        color: whitesmoke;
+      }
+
+      a:visited {
+        color: grey;
+      }
+
+      a:last-child {
+        border-radius: 0 0 5px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    <main>
+      <h2>Petru Miron - p3180261</h2>
+      <h2>Κομνάς Καφάσης - p3190081</h2>
+      <a href="./Exercise1/index.html">Exercise 1</a>
+      <a href="./Exercise2/index.html">Exercise 2</a>
+      <a href="./Exercise3/index.html">Exercise 3</a>
+      <a href="./Exercise4/index.html">Exercise 4</a>
+      <a href="./Exercise5/index.html">Exercise 5</a>
+    </main>
+  </body>
+</html>
