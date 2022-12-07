@@ -144,13 +144,18 @@ body {
 #shopping-cart > span {
   color: whitesmoke;
   background-color: var(--orange);
-  font-size: 0.7em;
-  width: 0.9em;
+  font-size: 0.5em;
+  width: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.2em;
   position: absolute;
   top: -0.3em;
   right: -0.3em;
   text-align: center;
   border-radius: 3px;
+  font-weight: normal;
 }
 
 .index--nav--ul--li > a:hover {
@@ -663,6 +668,50 @@ article.category--accessories {
 .mango--logo {
   height: 0.75em;
   margin-top: 1em;
+}
+
+/* add and remove items */
+
+.add--remove {
+  display: flex;
+  margin-left: 1.2em;
+  gap: 0.2em;
+  padding: 1em 0;
+  align-items: center;
+}
+
+.add--remove > button {
+  padding: 0.5em;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.add--remove > button:hover {
+  cursor: pointer;
+}
+
+.add--to--cart {
+  border: 1px solid var(--dark-blue);
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.add--to--cart:hover {
+  background-color: #04242a;
+  color: whitesmoke;
+}
+
+#remove--btn {
+  color: #792b03;
+  border: none;
+  background-color: inherit;
+}
+
+#add--btn {
+  color: #075563;
+  border: none;
+  background-color: inherit;
 }
 
 /* to rating tou proiontos p.x 4(2) */

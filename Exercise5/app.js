@@ -26,60 +26,62 @@ bars.addEventListener("click", () => {
 });
 
 // an ta 2 passwords tairiazoun
+//xwris to if(form) exw typeError , cannot read properties of null (reading addEventListener)
+if (form) {
+  form.addEventListener("submit", (e) => {
+    // check if passwords match
 
-window.onload = form.addEventListener("submit", (e) => {
-  // check if passwords match
+    // uncomment preventDefault for debugging
+    // get the value of the two passwords and check if they match, if they do, success,else, show errow
+    first_password_val = first_password.value;
+    second_password_val = second_password.value;
 
-  // uncomment preventDefault for debugging
-  // get the value of the two passwords and check if they match, if they do, success,else, show errow
-  first_password_val = first_password.value;
-  second_password_val = second_password.value;
+    if (first_password_val === second_password_val) {
+      console.log("passwords match! ");
+    } else {
+      e.preventDefault();
+      console.log("passwords don't match! ");
+      const error = document.createElement("p");
+      error.innerHTML = "Passwords don't match!";
+      second_password.parentNode.insertBefore(error, second_password);
+      error.style.display = "block";
+      error.classList.add("error");
+    }
 
-  if (first_password_val === second_password_val) {
-    console.log("passwords match! ");
-  } else {
-    e.preventDefault();
-    console.log("passwords don't match! ");
-    const error = document.createElement("p");
-    error.innerHTML = "Passwords don't match!";
-    second_password.parentNode.insertBefore(error, second_password);
-    error.style.display = "block";
-    error.classList.add("error");
-  }
+    //check age
+    let howOld = getAge(age.value);
+    if (howOld >= 16) {
+      console.log("success");
+    } else {
+      e.preventDefault();
+      console.log("error");
+      const error = document.createElement("p");
+      error.innerHTML = "You must be over 16 to register.";
+      age.parentNode.insertBefore(error, age);
+      error.style.display = "block";
+      error.classList.add("error");
+    }
+    console.log(howOld);
 
-  //check age
-  let howOld = getAge(age.value);
-  if (howOld >= 16) {
-    console.log("success");
-  } else {
-    e.preventDefault();
-    console.log("error");
-    const error = document.createElement("p");
-    error.innerHTML = "You must be over 16 to register.";
-    age.parentNode.insertBefore(error, age);
-    error.style.display = "block";
-    error.classList.add("error");
-  }
-  console.log(howOld);
-
-  // check if a payment method is selected
-  if (card.checked) {
-    e.preventDefault();
-    console.log("card checked");
-  } else if (apple_pay.checked) {
-    console.log("apple pay checkd");
-  } else if (paypal.checked) {
-    console.log("paypal checked");
-  } else {
-    console.log("nothing checked");
-    const error = document.createElement("p");
-    error.innerHTML = "You have to select a payment method!";
-    error.style.display = "block";
-    error.classList.add("error");
-    // insert the error just below the Select Payment Method
-    payment_method.parentNode.insertBefore(error, payment_method);
-  }
-});
+    // check if a payment method is selected
+    if (card.checked) {
+      e.preventDefault();
+      console.log("card checked");
+    } else if (apple_pay.checked) {
+      console.log("apple pay checkd");
+    } else if (paypal.checked) {
+      console.log("paypal checked");
+    } else {
+      console.log("nothing checked");
+      const error = document.createElement("p");
+      error.innerHTML = "You have to select a payment method!";
+      error.style.display = "block";
+      error.classList.add("error");
+      // insert the error just below the Select Payment Method
+      payment_method.parentNode.insertBefore(error, payment_method);
+    }
+  });
+}
 
 // βοηθητικη συναρτηση για να παρω την ηλικια
 function getAge(dateString) {
@@ -92,3 +94,50 @@ function getAge(dateString) {
   }
   return age;
 }
+
+// add items to cart
+
+const remove_item_btn = document.querySelector("#remove--btn");
+const add_item_btn = document.querySelector("#add--btn");
+const item_amount = document.querySelector("#item--amount");
+const cart_btn = document.querySelector(".add--to--cart");
+const cart_items = document.querySelector("#total--cart--items");
+
+let items_count;
+let cart_items_count;
+
+localStorage.getItem("items_count")
+  ? (items_count = localStorage.getItem("items_count"))
+  : 0;
+item_amount.innerHTML = items_count;
+
+localStorage.getItem("cart_items_count")
+  ? (cart_items_count = localStorage.getItem("cart_items_count"))
+  : 0;
+cart_items.innerHTML = cart_items_count;
+
+remove_item_btn.addEventListener("click", () => {
+  console.log("minus clicked");
+
+  if (items_count > 0) {
+    items_count--;
+    item_amount.innerHTML = items_count;
+    localStorage.setItem("items_count", items_count);
+  }
+
+  if (cart_items_count > 0) {
+    cart_items_count--;
+    cart_items.innerHTML = cart_items_count;
+    localStorage.setItem("cart_items_count", cart_items_count);
+  }
+});
+
+add_item_btn.addEventListener("click", () => {
+  console.log("plus clicked");
+  items_count++;
+  item_amount.innerHTML = items_count;
+  cart_items_count++;
+  cart_items.innerHTML = cart_items_count;
+  localStorage.setItem("items_count", items_count);
+  localStorage.setItem("cart_items_count", cart_items_count);
+});
