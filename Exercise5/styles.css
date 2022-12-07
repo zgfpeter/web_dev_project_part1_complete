@@ -436,25 +436,123 @@ article.category--accessories {
 }
 
 /* to link Categories, position:relative gia na mporw na valw position:absolute sto dropdown, pou kollaei katw apo to Categories */
-.index--categories {
+.index--categories,
+.shopping--cart--li {
   position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 /* *START OF DROPDOWN MENU */
 /* gia to dropdown otan kanw hover sto link Categories */
 
-.categories--dropdown {
+.shopping--cart--li:hover > .cart--dropdown {
+  display: block;
+}
+
+/* cart--dropdown = to dropdown shopping cart otan kanw hover sto shopping cart icon */
+
+.categories--dropdown,
+.cart--dropdown {
   width: 20em;
   height: 10em;
   position: absolute;
   background-color: whitesmoke;
-  top: 2.2em;
+  top: 4em;
   left: -7.3em;
   border-radius: 3px;
   z-index: 2;
   display: none;
   /* display:none giati emfanizetai mono sto hover */
 }
+
+/* gia na mporw na kanw scroll alla na krupsw ta scrollbars */
+.cart--dropdown::-webkit-scrollbar {
+  display: none;
+}
+
+.cart--dropdown {
+  top: 4.5em;
+  left: -16em;
+  overflow: scroll;
+  height: fit-content;
+  background-color: var(--dark-blue);
+}
+
+.cart--dropdown > h2 {
+  width: 100%;
+  font-size: 1.2em;
+  color: var(--dark-blue);
+  border-radius: 3px 3px 0 0;
+  text-align: center;
+  padding: 0.5em;
+  font-weight: 500;
+  background-color: var(--light-yellow);
+}
+
+.cart--dropdown > ul > h3 {
+  color: whitesmoke;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.25em 0.5em;
+}
+
+.shoes--sneakers--section--article.cart--item {
+  border: none;
+  border-bottom: 0.1em solid var(--border-color);
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.shoes--sneakers--section--article.cart--item:hover {
+  opacity: 1;
+}
+
+.shoes--sneakers--section--article.cart--item > button {
+  height: 2em;
+  width: 2em;
+  border: none;
+  color: red;
+  background-color: inherit;
+  margin-right: 0.5em;
+  z-index: 100;
+}
+
+.shoes--sneakers--section--article.cart--item > button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.cart--item > a {
+  height: 5em;
+  display: flex;
+  width: 100%;
+}
+
+.cart--item > a > div {
+  padding: 0;
+}
+
+.cart--item > a > .product--card {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5em;
+  width: 75%;
+}
+.cart--item > a > .product--card > p {
+  text-align: center;
+  font-size: 1em;
+}
+
+.cart--item > a > .product--card > .product--card--details {
+  font-size: 0.8em;
+}
+
+/* END OF SHOPPING CART DROPDOWN */
 
 .index--categories:hover .categories--dropdown {
   display: block;
