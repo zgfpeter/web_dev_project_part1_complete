@@ -99,12 +99,15 @@ function getAge(dateString) {
 
 const remove_item_btn = document.querySelector("#remove--btn");
 const add_item_btn = document.querySelector("#add--btn");
-const item_amount = document.querySelector("#item--amount");
 const cart_btn = document.querySelector(".add--to--cart");
+
+const item_amount = document.querySelector("#item--amount");
 const cart_items = document.querySelector("#total--cart--items");
+const cart_total_amount = document.querySelector("#cart--total--amount");
 
 let items_count = 0;
 let cart_items_count = 0;
+let total_amount_count = 0;
 
 localStorage.getItem("items_count") != null
   ? (items_count = localStorage.getItem("items_count"))
@@ -116,13 +119,26 @@ localStorage.getItem("cart_items_count") != null
   : 0;
 cart_items.innerHTML = cart_items_count;
 
-remove_item_btn.addEventListener("click", () => {
-  console.log("minus clicked");
+localStorage.getItem("total_amount_count") != null
+  ? (total_amount_count = localStorage.getItem("total_amount_count"))
+  : 0;
+cart_total_amount.innerHTML = total_amount_count;
 
+remove_item_btn.addEventListener("click", (e) => {
+  console.log("minus clicked");
+  const parent = e.target.parentNode.parentNode;
+  let priceNode = parent.querySelector(".price").innerHTML;
+  let slicedPrice = priceNode.substr(0, priceNode.length - 1);
+  total_amount_count += +slicedPrice;
   if (items_count > 0) {
     items_count--;
+
+    cart_items.innerHTML = cart_items_count;
     item_amount.innerHTML = items_count;
+    cart_total_amount.innerHTML = total_amount_count;
+
     localStorage.setItem("items_count", items_count);
+    localStorage.setItem("total_amount_count", total_amount_count);
   }
 
   if (cart_items_count > 0) {
@@ -132,12 +148,20 @@ remove_item_btn.addEventListener("click", () => {
   }
 });
 
-add_item_btn.addEventListener("click", () => {
+add_item_btn.addEventListener("click", (e) => {
+  const parent = e.target.parentNode.parentNode;
+  let priceNode = parent.querySelector(".price").innerHTML;
+  let slicedPrice = priceNode.substr(0, priceNode.length - 1);
   console.log("plus clicked");
   items_count++;
-  item_amount.innerHTML = items_count;
   cart_items_count++;
+  total_amount_count += +slicedPrice;
+
+  item_amount.innerHTML = items_count;
   cart_items.innerHTML = cart_items_count;
+  cart_total_amount.innerHTML = total_amount_count;
+
   localStorage.setItem("items_count", items_count);
+  localStorage.setItem("total_amount_count", total_amount_count);
   localStorage.setItem("cart_items_count", cart_items_count);
 });
