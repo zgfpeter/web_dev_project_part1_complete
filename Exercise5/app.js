@@ -103,8 +103,8 @@ const item_amount = document.querySelector("#item--amount");
 const cart_btn = document.querySelector(".add--to--cart");
 const cart_items = document.querySelector("#total--cart--items");
 
-let items_count;
-let cart_items_count;
+let items_count = 0;
+let cart_items_count = 0;
 
 localStorage.getItem("items_count")
   ? (items_count = localStorage.getItem("items_count"))
