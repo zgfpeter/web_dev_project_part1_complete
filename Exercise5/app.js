@@ -106,12 +106,12 @@ const cart_items = document.querySelector("#total--cart--items");
 let items_count = 0;
 let cart_items_count = 0;
 
-localStorage.getItem("items_count") != NaN
+localStorage.getItem("items_count") != null
   ? (items_count = localStorage.getItem("items_count"))
   : 0;
 item_amount.innerHTML = items_count;
 
-localStorage.getItem("cart_items_count") != NaN
+localStorage.getItem("cart_items_count") != null
   ? (cart_items_count = localStorage.getItem("cart_items_count"))
   : 0;
 cart_items.innerHTML = cart_items_count;
