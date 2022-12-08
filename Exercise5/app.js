@@ -109,27 +109,27 @@ let items_count = 0;
 let cart_items_count = 0;
 let total_amount_count = 0;
 
-!isNaN(localStorage.getItem("items_count"))
-  ? (items_count = localStorage.getItem("items_count"))
-  : 0;
+localStorage.getItem("items_count") === null
+  ? 0
+  : (items_count = +localStorage.getItem("items_count"));
 
 // localStorage.getItem("items_count") != null
 //   ? (items_count = localStorage.getItem("items_count"))
 //   : 0;
 item_amount.innerHTML = items_count;
 
-!isNaN(localStorage.getItem("cart_items_count"))
-  ? (cart_items_count = localStorage.getItem("cart_items_count"))
-  : 0;
+localStorage.getItem("cart_items_count") === null
+  ? 0
+  : (cart_items_count = +localStorage.getItem("cart_items_count"));
 
 // localStorage.getItem("cart_items_count") != null
 //   ? (cart_items_count = localStorage.getItem("cart_items_count"))
 //   : 0;
 cart_items.innerHTML = cart_items_count;
 
-!isNaN(localStorage.getItem("total_amount_count"))
-  ? (total_amount_count = localStorage.getItem("total_amount_count"))
-  : 0;
+localStorage.getItem("total_amount_count") === null
+  ? 0
+  : (total_amount_count = +localStorage.getItem("total_amount_count"));
 
 // localStorage.getItem("total_amount_count") != null
 //   ? (total_amount_count = localStorage.getItem("total_amount_count"))
