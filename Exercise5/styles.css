@@ -436,7 +436,10 @@ article.category--accessories {
 }
 
 /* to link Categories, position:relative gia na mporw na valw position:absolute sto dropdown, pou kollaei katw apo to Categories */
-.index--categories,
+.index--categories {
+  position: relative;
+}
+
 .shopping--cart--li {
   position: relative;
   height: 100%;
@@ -459,7 +462,7 @@ article.category--accessories {
   height: 10em;
   position: absolute;
   background-color: whitesmoke;
-  top: 4em;
+  top: 2.2em;
   left: -7.3em;
   border-radius: 3px;
   z-index: 2;
@@ -1205,6 +1208,10 @@ legend {
     height: 5em;
   }
 
+  .shopping--cart--li {
+    height: auto;
+  }
+
   .index--header--top {
     display: none;
   }
@@ -1385,6 +1392,10 @@ legend {
   /* to mobile menu ( ta bars ) tha piasei olo to viewport height */
   .index--nav--ul.mobile--menu {
     height: 100vh;
+  }
+
+  .shopping--cart--li {
+    height: auto;
   }
 
   /* gia to logo panw aristera otan einai anoixto to mobile menu */

@@ -109,19 +109,31 @@ let items_count = 0;
 let cart_items_count = 0;
 let total_amount_count = 0;
 
-localStorage.getItem("items_count") != null
+!isNaN(localStorage.getItem("items_count"))
   ? (items_count = localStorage.getItem("items_count"))
   : 0;
+
+// localStorage.getItem("items_count") != null
+//   ? (items_count = localStorage.getItem("items_count"))
+//   : 0;
 item_amount.innerHTML = items_count;
 
-localStorage.getItem("cart_items_count") != null
+!isNaN(localStorage.getItem("cart_items_count"))
   ? (cart_items_count = localStorage.getItem("cart_items_count"))
   : 0;
+
+// localStorage.getItem("cart_items_count") != null
+//   ? (cart_items_count = localStorage.getItem("cart_items_count"))
+//   : 0;
 cart_items.innerHTML = cart_items_count;
 
-localStorage.getItem("total_amount_count") != null
+!isNaN(localStorage.getItem("total_amount_count"))
   ? (total_amount_count = localStorage.getItem("total_amount_count"))
   : 0;
+
+// localStorage.getItem("total_amount_count") != null
+//   ? (total_amount_count = localStorage.getItem("total_amount_count"))
+//   : 0;
 cart_total_amount.innerHTML = total_amount_count;
 
 remove_item_btn.addEventListener("click", (e) => {
